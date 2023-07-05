@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthcare/widgets/chat_sample.dart';
+import 'package:healthcare/screens/videocall.dart';
 
 class ChatScreen extends StatelessWidget {
   @override
@@ -31,20 +31,25 @@ class ChatScreen extends StatelessWidget {
           ),
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(left: 30),
               child: Icon(
                 Icons.call,
                 color: Colors.white,
                 size: 26,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(right: 15),
-              child: Icon(
+            IconButton(
+              icon: Icon(
                 Icons.video_call,
                 color: Colors.white,
                 size: 30,
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VideoCallScreen()),
+                );
+              },
             ),
             Padding(
               padding: EdgeInsets.only(right: 10),
@@ -58,9 +63,7 @@ class ChatScreen extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 80),
-        children: [
-
-        ],
+        children: [],
       ),
       bottomSheet: Container(
         height: 65,
